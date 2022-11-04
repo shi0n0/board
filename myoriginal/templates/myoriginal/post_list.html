@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'reset.css' %}">
+    <link rel="stylesheet" href="{% static 'header.css' %}">
+
+    <title>掲示板</title>
+</head>
+
+<header>
+
+    <div class="logo-all">
+        {% load static %}
+        <a href=""><img src="{% static 'KEIJI-icon.png' %}"></a>
+    </div>
+
+    <nav class="navigation">
+        <ul>
+            {% load static %}
+            <li><a href="https://twitter.com/z4keru"><img src="{% static 'Twitter-icon.jpeg' %}"></a></li>
+            <li><a href="/info">info</a></li>
+            <li><a href="">top</a></li>
+        </ul>
+    </nav> 
+
+</header>
+
+<body>
+{% for post in post_list %}
+
+{{ post.name }}
+{{ post.text }}
+{{ post.date }}
+
+{% endfor %}
+</body>
+</html>
